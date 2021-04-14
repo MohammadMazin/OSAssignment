@@ -1,0 +1,152 @@
+:root{
+    --bgColor: rgb(206, 163, 82);
+}
+
+*{
+    margin: auto;
+    padding:0px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    overflow-x: visible;
+    list-style: none;
+
+}
+
+.head{
+    
+    background-color: rgb(29, 29, 29);
+    height: auto;
+    padding-bottom: 1rem;
+}
+
+body{
+    background-color: var(--bgColor);
+}
+
+.head h1{
+    text-align: center;
+    color: var(--bgColor);
+  
+}
+
+.head h2{
+    text-align: center;
+    color: rgb(233, 198, 134);
+    border-bottom: 5px solid var(--bgColor);
+
+}
+
+
+.head ul{
+    
+    display:flex;
+}
+
+.head li{
+    display:block;
+    padding-right: 2rem;  
+    margin: auto;
+    padding-top: 0.5rem;
+    font-size: 25px;
+   
+}
+
+.head a{
+    text-decoration: none;
+    color: white;
+    transition: 0.5s;
+}
+
+.head a:hover{
+    color:rgb(165, 155, 17);
+}
+
+.container{
+    padding-top: 24px;
+    margin-bottom: 3rem;
+
+}
+
+.textB{
+    background-color: rgb(243, 242, 240);
+    text-align: right;
+    width:85%;
+    margin: auto auto;
+    overflow-wrap: break-word;
+    box-shadow: 0 0 10px rgb(117, 110, 2);
+    border-radius: 15px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+.textTitle{
+    padding-top: 10px;
+    font-size: 2rem;
+    text-align: left;
+    padding-left: 14px;
+    border-bottom: 4px solid var(--bgColor);;
+}
+
+
+.textB li{
+    text-align: center;
+}
+
+
+.textB a{
+    margin-right: auto;
+    color: black;
+    padding-left: 10px;
+    padding-top: 55px;
+   
+}
+
+.text li p{
+    text-align: left;
+}
+
+.textB li h2{
+    padding-top: 45px;
+    border-bottom: 4px solid var(--bgColor);;
+    text-align: center;
+}
+
+
+.textB p{
+    font-size: 15px;
+    padding-top: 10px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.textB img{
+    width:100%;
+    height:auto;
+    padding: 10px 10px;
+}
+
+.textB .intro{
+    text-align: left;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.textB .introtext{
+    overflow-wrap: break-word;
+}
+
+.intro{
+    border-bottom: 1px solid black;
+}
+
+.introtext ol{
+    padding: 10px 10px;
+}
+
+.introtext ol li{
+    text-align: left;
+    padding-left: 15px;
+    padding-top: 3px;
+}
+
+

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>OS Assignment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<html>
+
+<body>
+
+    <div class="head" id="top">
+
+        <h1>OS Assignment - Syed Mohammad Mazin</h1>
+        <h2>CMS: 306913 || Class: BSCS 9B</h2>
+        <nav>
+            <ul>
+                <li><a href="">Project Summary</a></li>
+                <li><a href="#working">Working Of Project</a></li>
+                <li><a href="#errors">Errors</a></li>
+                <li><a href="https://github.com/MohammadMazin/OSAssignment" target="blank" style="border-bottom: 5px solid rgb(128, 109, 0);">GitHub Repository</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="textB">
+            <h2 class="textTitle">Project Summary</h2>
+            <p>This was an assignment to create our own operating system using tools such as Docker and QEMU to print a set of characters on the screen.</p>
+            <p>The structure of the OS was done mostly in assembly language, while the functions of printing text and how it should be displayed on screen was done in the C language.</p>
+            <p></p>
+
+            <h4 class="intro">Tools Used</h4>
+            <div class="introtext">
+                <ol>
+                    <li>Text Editor: Visual Studio Code</li>
+                    <li>Docker</li>
+                    <li>QEMU</li>
+                    <li>GitHub</li>
+                </ol>
+           
+             </div>
+
+             <h4 class="intro">Coded In</h4>
+             <div class="introtext">
+                 <ol>
+                     <li>.asm</li>
+                     <li>.C</li>
+                 </ol>               
+             </div>
+ 
+             <h4 class="intro">Output</h4>
+             <img src="Errors/output.JPG">
+             <a href="#top">Back To Top</a>
+        
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="textB">
+           
+            <h2 class="textTitle" id="working">Working of The Project</h2>
+
+            <a href="#top">Back To Top</a>
+            <p>This section discusses the files in the project folder and what their use is in making a functioning Operating System.</p>
+            <ul>
+                <li>
+                    <h2>Dockerfile</h2>
+                    <p>This file is where we import packages needed to build our OS. Packages like NASM are used to compile the assembly code. Grub is used to build the ISO files. Here, we also set the starting folder for the OS.
+                    </p>
+
+                    <p>From here, we build our docker image which then gives us access to all the docker tools for building our OS.</p>
+                </li>
+
+                <li>
+                    <h2>header.asm</h2>
+                    <p>This file contains the data that needs to be included in the OS binary at startup. Here the bootloader can locate this file to understand what type of OS we are running.</p>
+                </li>
+
+                <li>
+                    <h2>main.asm</h2>
+                    <p>This file defines the structure of the OS. The code here defines how features (such as paging, page tables,virtual addresses, etc) are setup and how they are to function.</p>
+
+                    <p>We define the stack here as well, which is used in function calls. The memory defined in the stack is reserved when the bootloader runs.</p>
+
+                    <p>In this particular case, we set the start point to tag mentioned in 'main.asm'. Then the program starts 1MegaByte in and after that we define the sections of the multiboot header and text section.</p>
+
+                    <p>To have our OS perform in a 64-bit architecture, we set up multiple function calls in the assembly file. We define a series of steps the bootloader will have to check (ie. checking for multiboot, long mode) and if any step fails an error message can be displayed.</p>
+
+                    <p>The final step to run a 64bit architecture was to make a global descriptor table, which is a necessary step.</p>
+                </li>
+
+                <li>
+                    <h2>main64.asm</h2>
+                    <p>This file is to be accessed by main.asm. We set multiple segment registers to 0</p>
+                
+                </li>
+
+                <li>
+                    <h2>linker.ld</h2>
+                    <p>This linker file does what it sounds like, it links the different sections of our code to help build our OS. We define the entry point for the OS and the different sections that will need to be accessed by other files during the build process.</p>
+
+                  
+                </li>
+
+                <li>
+                    <h2>grub.cfg</h2>
+                    <p>The purpose of the grub file is to create an ISO file out of our OS kernel binary. The ISO file is where the OS is commonly stored. The path of the multiboot is specified in this file</p>
+                </li>
+
+                <li>
+                    <h2>Makefile</h2>
+                    <p>It is a file that helps organise build commands. It's efficient in the sense that only files that have been modified since the last build command will be updated when we run the build command. It stores all the object and sources files for .asm, .c, kernel files, x86_64 files</p>
+
+                    <p>The command 'build-x86_64' would only run if there is any changes in the source files. Using the linker and grub file, we generate or update the ISO file after the buil command is executed.  </p>
+                </li>
+
+                <li>
+                    <h2>main.c</h2>
+                    <p>This is the code that is executed when the OS runs. Any string, color choices we define, present in this C file will be displayed on the screen when we run our OS.</p>
+                </li>
+
+                <li>
+                    <h2>print.h</h2>
+                    <p>This header file contains all the functions we'll need in our C files. Also an ENUM for all the different colors we can access.</p>
+                </li>
+
+                <li>
+                    <h2>print.c</h2>
+                    <p>This C file defines the structure of the screen and how characters are to be printed there. We define number of columns, rows, what to do when characters exceed either number of columns and rows, etc.</p>
+                </li>
+
+              </ul>
+            <a href="#top">Back To Top</a>
+        </div>
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="textB">
+           
+            <h2 class="textTitle" id="errors">Errors Encountered In The Project</h2>
+            <a href="#top">Back To Top</a>
+            <p>There were a multitude of errors present while running the project. Here's a list of them and how they were resolved.</p>
+            <ul>
+                <li>
+                    <h2>Admin Mode</h2>
+                    <img src="Errors/001.JPG">
+                    <p>This error prevented docker from starting in Windows Powershell or Windows Command prompt. This was resolved by starting both Docker Desktop App and Visual Studio Code in Administrator mode.
+
+                    </p>
+                </li>
+
+                <li>
+                    <h2>QEMU</h2>
+                    <img src="Errors/002.JPG">
+                    <p>This error was cause if QEMU was not added to the Environment Variables in your system. To resolve this, the folder where QEMU's installed was added to 'Path' in Environment varibles so that the folders and files present inside QEMU could be accessed through the terminal.
+
+                    </p>
+                </li>
+
+                <li>
+                    <h2>WSL2</h2>
+                    <img src="Errors/003.JPG">
+                    <p>After Docker was installed, this was the first error that was encountered. WSL2 was to be installed separately and it was then set as the default version.
+                    </p>
+                </li>
+
+                <li>
+                    <h2>File Naming</h2>
+                    <img src="Errors/004.JPG">
+                    <p>After opening Docker, there was an error where you were unable to build your ISO files.</p>
+                    <p>The reason for this was that there was an error in the syntax of the linker files. So when it was being called in Makefile, it could not build properly.</p>
+                </li>
+
+                <li>
+                    <h2>QEMU- Running The Emulator</h2>
+                    <img src="Errors/005.JPG">
+                    <p>Even after everything was built properly using docker, the final error that proved to be a hurdle was this. The cause of this error was that QEMU could not locate 'bios-256k.bin' and it was because we did not add a path to where this file was located.
+                    </p>
+
+                    <p>This was resolved by adding '-L "Path to where QEMU was installed"' at the end of the original command.</p>
+                </li>
+
+            </ul>
+            <a href="#top">Back To Top</a>
+        </div>
+        
+    </div>
+
+</body>
+
+</html>
