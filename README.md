@@ -11,11 +11,11 @@
 
 ## Steps To Run Code
 * Run the following command in VSCode
->*  Linux or Mac OC: docker run --rm -it -v "$pwd":/root/env myos-buildenv
->*  Windows [Command Prompt]: docker run --rm -it -v "%cd%":/root/env myos-buildenv
+>*  Linux or Mac OC: <code>docker run --rm -it -v "$pwd":/root/env myos-buildenv</code>
+>*  Windows [Command Prompt]: <code>docker run --rm -it -v "%cd%":/root/env myos-buildenv</code>
 >*  Windows [Powershell]: <code>docker run --rm -it -v "${pwd}:/root/env" myos-buildenv</code>
-* Build files: make build-x86_64
-* Run QEMU: qemu-system-x86_64 -cdrom dist/x86_64/kernel.iso -L "C:\Program Files\qemu"
+* Build files: <code>make build-x86_64</code>
+* Run QEMU: <code>qemu-system-x86_64 -cdrom dist/x86_64/kernel.iso -L "C:\Program Files\qemu"</code>
 
 ## Notes
 
