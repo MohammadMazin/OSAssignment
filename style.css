@@ -13,9 +13,10 @@
 }
 
 .head{
-    
+   
     background-color: rgb(29, 29, 29);
     height: auto;
+    padding-top: 1rem;
     padding-bottom: 1rem;
 }
 
@@ -137,10 +138,19 @@ body{
 
 .intro{
     border-bottom: 1px solid black;
+    margin: 10px;
 }
 
 .introtext ol{
     padding: 10px 10px;
+}
+
+.introtext p{
+    margin-right: 9px;
+}
+
+.introtext h4 p{
+    margin-left: 15px;
 }
 
 .introtext ol li{
@@ -149,4 +159,77 @@ body{
     padding-top: 3px;
 }
 
+.projects{
+    border-left: 4px solid rgb(255, 145, 0);
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
 
+.projects h4{
+    line-height: 25px;
+}
+
+
+.res::before{
+   font-family: "Font Awesome 5 Free";
+   content: "\f02d";
+   display: inline-block;
+   padding-right: 3px;
+   vertical-align: middle;
+   font-weight:900;
+   color:white;
+   font-size: .75em;
+   margin-top: -5px;
+
+}
+
+.info{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width:100%;
+    height:auto;
+    background-color: rgb(131, 93, 23);
+    display: flex;
+    flex-direction: row;
+    line-height: 30px;
+    color: white;
+    overflow-wrap: break-word;
+}
+
+.email::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f199";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight:900;
+    color:white;
+    font-size: 1em;
+    margin-top: -4px;
+ 
+ }
+
+
+ .phone::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f87b";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight:900;
+    color:white;
+    font-size: 1em;
+    margin-top: -4px;
+ 
+ }
+
+ .tw::before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f16d";
+    padding-right: 3px;
+    font-weight:900;
+    color:white;
+    font-size: 1em;
+    margin-top: -4px;
+ 
+ }
