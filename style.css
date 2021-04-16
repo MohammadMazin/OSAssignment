@@ -22,7 +22,7 @@
 
 body{
     background-color: var(--bgColor);
-}
+}:F
 
 .head h1{
     text-align: center;
@@ -170,18 +170,6 @@ body{
 }
 
 
-.res::before{
-   font-family: "Font Awesome 5 Free";
-   content: "\f02d";
-   display: inline-block;
-   padding-right: 3px;
-   vertical-align: middle;
-   font-weight:900;
-   color:white;
-   font-size: .75em;
-   margin-top: -5px;
-
-}
 
 .info{
     padding-top: 10px;
@@ -196,40 +184,3 @@ body{
     overflow-wrap: break-word;
 }
 
-.email::before{
-    font-family: "Font Awesome 5 Free";
-    content: "\f199";
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight:900;
-    color:white;
-    font-size: 1em;
-    margin-top: -4px;
- 
- }
-
-
- .phone::before{
-    font-family: "Font Awesome 5 Free";
-    content: "\f87b";
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight:900;
-    color:white;
-    font-size: 1em;
-    margin-top: -4px;
- 
- }
-
- .tw::before{
-    font-family: "Font Awesome 5 Free";
-    content: "\f16d";
-    padding-right: 3px;
-    font-weight:900;
-    color:white;
-    font-size: 1em;
-    margin-top: -4px;
- 
- }
